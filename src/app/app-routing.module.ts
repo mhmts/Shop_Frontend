@@ -14,7 +14,7 @@ const routes: Routes = [
   {path:"login", component:LoginComponent},
   {path:"todos",pathMatch:"full",component:TodoComponent}
 ];
-  
+    
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
