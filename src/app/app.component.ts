@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
 //Note1:Componet: Html'in datasının yönetildiği yerdir.
 export class AppComponent {
   title = 'Eshop';  
-    
+     
 }
