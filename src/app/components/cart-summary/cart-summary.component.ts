@@ -14,7 +14,7 @@ export class CartSummaryComponent {
   constructor( private cartService:CartService,private toastrService:ToastrService) { }
 
   ngOnInit(): void {
-    this.getCart();
+     this.getCart();
     
   }
 
@@ -25,7 +25,7 @@ export class CartSummaryComponent {
   removeFromCart(product:Product)
   {
     this.cartService.removeFromCart(product);
-    this.toastrService.error("Sepeten silindi",product.name +"   silindi");
+    this.toastrService.error("Sepeten silindi",product.productName +"   silindi");
 
   }
 }

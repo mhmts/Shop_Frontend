@@ -5,51 +5,42 @@
             <div class="card-body">
                 <form [formGroup]="productAddForm">
                     <div class="mb-3">
-                        <label for="name">Ürün adı</label>
+                        <label for="productName">Ürün adı</label>
                         <div class="form-group">
                             <input type="text" 
-                            id="productId" 
-                            formControlName="name" class="form-control" 
+                            id="productName" 
+                            formControlName="productName" class="form-control" 
                             placeholder="Ürün adı"/>
                         </div>
                     </div>
-                    <!-- <div class="mb-3">
-                        <label for="productId">productId</label>
-                        <div class="form-group">
-                            <input type="text" 
-                            id="productId" 
-                            formControlName="productId" class="form-control" 
-                            placeholder="productId"/>
-                        </div>
-                    </div> -->
-                    
-                   <div class="mb-3">
-                    <label for="price">Fiyatı</label>
-                    <div class="form-group">
-                        <input type="number" 
-                        id="price" 
-                        formControlName="price" class="form-control" 
-                        placeholder="Fiyatı"/>
-                    </div>
-                   </div>
-                    <div  class="mb-3">
-                        <label for="description">Açıklama</label>
+                    <div class="mb-3">
+                        <label for="categoryId">Kategori</label>
                         <div class="form-group">
                             <input type="number" 
-                            id="description" 
-                            formControlName="description" class="form-control" 
-                            placeholder="Açıklama"/>
+                            id="categoryId" 
+                            formControlName="categoryId" class="form-control" 
+                            placeholder="Kategori"/>
+                        </div>
+                       </div>
+                  
+                    <div  class="mb-3">
+                        <label for="unitsInStock">Stok Adedi</label>
+                        <div class="form-group">
+                            <input type="number" 
+                            id="unitsInStock" 
+                            formControlName="unitsInStock" class="form-control" 
+                            placeholder="Stok Adedi"/>
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label for="url">Url</label>
+                        <label for="unitPrice">Fiyatı</label>
                         <div class="form-group">
                             <input type="number" 
-                            id="url" 
-                            formControlName="url" class="form-control" 
-                            placeholder="url"/>
+                            id="unitPrice" 
+                            formControlName="unitPrice" class="form-control" 
+                            placeholder="Fiyatı"/>
                         </div>
-                    </div>
+                       </div>
                 </form>
             </div>
             <div class="card-footer">

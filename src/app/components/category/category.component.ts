@@ -7,7 +7,7 @@ import { CategoryService } from 'src/app/services/category.service';
   styleUrls: ['./category.component.css']
 })
 export class CategoryComponent {
-  categories:Category[]=[]
+  categories : Category[]=[];
   currentCategory:Category;
   defaultCategory:Category;
   constructor(private categoryService: CategoryService) {}
@@ -18,12 +18,13 @@ export class CategoryComponent {
   getCategories() {
     this.categoryService.getCategories().subscribe((response) => {
       this.categories = response;
-      
+      //  console.log(response)
     });
 
   }
   setCurrentCategory(category:Category) {
     this.currentCategory = category;
+    // console.log(this.currentCategory)
   }
   clearCurrentCategory(){
     this.currentCategory = this.defaultCategory;

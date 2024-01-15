@@ -13,28 +13,25 @@
     <thead>
         <tr>  
             <th>ID</th>
-            <th>Ürün Adı</th>                        
+            <th>Ürün Adı</th>  
+            <th>Kategori</th>                          
             <th>Fiyatı</th>
             <th>KDV'li Fiyatı</th>
-            <th>Açıklama</th> 
-            <th>Url Adresi</th>
-          
+            <th>stok Adedi</th> 
           
         </tr>
     </thead>
     <tbody>
+    
     <tr *ngFor="let product of products|filterPipe:filterText">
-        <td>{{product.productId}}</td>    
-        <td>{{product.name|uppercase}}</td>  
-        <td>{{product.price|currency}}</td>
-        <td>{{product.price|vatAdded:10|currency}}</td>
-        <td>{{product.description}}</td> 
-        <td>{{product.url}}</td>
+        <td>{{product.id}}</td>    
+        <td>{{product.productName|uppercase}}</td>  
+        <td>{{product.unitPrice|currency}}</td>
+        <td>{{product.unitPrice|vatAdded:10|currency}}</td>
+        <td>{{product.quantityPerUnit}}</td> 
+        <td>{{product.unitsInStock}}</td>
         <td><button (click)="addToCart(product)" type="button" class="btn btn-success">Sepete Ekle</button></td>
 
-             
-        
-      
         <!-- <td>{{product.userId}}</td>  
         <td>{{product.id}}</td>
         <td>{{product.title}}</td>

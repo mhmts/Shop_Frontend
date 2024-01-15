@@ -9,8 +9,8 @@ import { CartItem } from '../models/cartItem';
 export class CartService {
    addToCart(product:Product){
 
-    let item=CartItems.find(c=>c.product.productId ===product.productId);
-
+    let item=CartItems.find(c=>c.product.id ===product.id);
+     console.log(item)
     if(item){
      item.quantity+=1;
     }
@@ -29,10 +29,11 @@ export class CartService {
   }
   removeFromCart(product:Product)
   {
-    let item=CartItems.find(c=>c.product.productId ===product.productId);
+    let item=CartItems.find(c=>c.product.id ===product.id);
       console.log(item)
       console.log(CartItems)
     CartItems.splice(CartItems.indexOf(item),1);
+    console.log(CartItems)
 
   }
 }

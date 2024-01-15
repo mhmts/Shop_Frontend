@@ -11,6 +11,7 @@ const routes: Routes = [
   {path:"products",component:ProductComponent},
   {path:"products/category/:categoryId",component:ProductComponent},
   {path:"products/add", component:ProductAddComponent,canActivate:[loginGuard]},
+  // {path:"products/add", component:ProductAddComponent},
   {path:"login", component:LoginComponent},
   {path:"todos",pathMatch:"full",component:TodoComponent}
 ];

@@ -4,7 +4,7 @@ import { ResponseModel } from "./responseModel";
 
 export interface ProductResponseModel extends ResponseModel{
      data:Product[]
-     success:boolean,
-      message:string
+//      success:boolean,
+//       message:string
    
 }

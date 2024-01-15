@@ -14,28 +14,7 @@ import { CartService } from 'src/app/services/cart.service';
   styleUrls: ['./product.component.css'],
 })
 export class ProductComponent implements OnInit {
-  //   product1={productId:1,name:'Bardak',url:'aaaa',price:5,description:'bbbb'}
-  //   product2={productId:2,name:'Bilgisayar',url:'aaaa',price:10,description:'ccbbbb'}
-  //  product3={productId:3,name:'Elma',url:'aaaa',price:15,description:'aabbbb'}
-  //  product4={productId:4,name:'Kamera',url:'aaaa',price:5,description:'aabbbb'}
-
-  // products=[this.product1,this.product2,this.product3,this.product4]
-  //   products:Product[]=[
-  //    this.product1,
-  //   this.product2,
-  //    this.product3,
-  //  this.product4,
-  //  ];
-
-  //  productResponseModel:ProductResponseModel={
-  //   data:this.products
-  // message:"",
-  //  success:true
-  //};
-
-  // apiUrl="https://jsonplaceholder.typicode.com/todos"
-
-  products: Product[] = [];
+  products: Product[]=[];
   dataLoaded=false;
   filterText="";
   
@@ -60,16 +39,18 @@ export class ProductComponent implements OnInit {
     this.productService.getProducts().subscribe((response) => {
       this.products = response;
       this.dataLoaded=true
-      console.log(this.products); 
-      console.log("Api request bitti.");     
+      // console.log(response); 
+      //  console.log(this.products); 
+      // console.log("Api request bitti.");     
     });
-    console.log("Metod bitti.");
+    // console.log("Metod bitti.");
   }
    
   getProductsByCategory(categoryId:number) {
-    this.productService.getProductsByCategory(categoryId).subscribe((response) => {
-      this.products = response;   
-      this.dataLoaded=true       
+    this.productService.getProductsByCategory(categoryId).subscribe((data) => {
+      this.products = data;   
+      this.dataLoaded=true   
+      console.log(data);     
     });
  
   }
@@ -87,13 +68,13 @@ export class ProductComponent implements OnInit {
 //   }
 
   addToCart(product: Product) {
-    if (product.productId === 1) {
+    if (product.id === 1) {
       this.toastrService.error(
         'Hatalı ürün sepete eklendi',
-        product.name
+        product.productName
       );
     } else
-      this.toastrService.success('ürün sepete eklendi', product.name);
+      this.toastrService.success('ürün sepete eklendi', product.productName);
       this.cartService.addToCart(product);
   }
 }
